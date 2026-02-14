@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About Durgambika Korlapati - Computer Science student passionate about web development, programming and problem solving"/>
+  <title>Durgambika Korlapati | About</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --accent: #6366f1;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-light: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+    }
+    .dark {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #334155;
+      --shadow: 0 10px 15px -3px rgba(0,0,0,0.4);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Navbar ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+    .logo {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.22s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+    .hamburger { display: none; font-size: 1.7rem; cursor: pointer; color: var(--text); }
+
+    /* ── Hero / Intro ── */
+    .hero {
+      padding: 9rem 0 7rem;
+      background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+    }
+    .dark .hero { background: linear-gradient(135deg, #1e293b 0%, #111827 100%); }
+    .hero h1 { font-size: 3.4rem; margin-bottom: 1.1rem; line-height: 1.15; }
+    .hero p.tagline { font-size: 1.35rem; color: var(--text-light); max-width: 620px; }
+
+    /* ── Sections ── */
+    section { padding: 7rem 0; }
+    .section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 70px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Cards & Timeline */
+    .card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -8px rgba(0,0,0,0.12);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--border);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 1.8rem;
+      background: var(--surface);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+    }
+    .timeline-item:nth-child(odd)  { left: 0; }
+    .timeline-item:nth-child(even) { left: 55%; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 50%;
+      top: 28px;
+      right: -9px;
+      z-index: 1;
+    }
+    .timeline-item:nth-child(even)::before { left: -9px; right: auto; }
+
+    .achievement-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.25s;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex; }
+      .timeline::before { left: 28px; }
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 3.2rem;
+      }
+      .timeline-item::before { left: -9px !important; }
+      .hero { padding: 7rem 0 5rem; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-content">
+    <div class="logo">Durgambika K.</div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="assets/resume.pdf" class="btn-primary" download>Download CV</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:1.25rem;">
+      <button id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <div class="hamburger" id="hamburger">☰</div>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1>Durgambika Korlapati</h1>
+    <p class="tagline">Computer Science student passionate about clean code, web development and solving real problems through technology</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+
+    <div style="max-width:780px; margin:0 auto; font-size:1.05rem;">
+      <h3 style="margin-bottom:0.6rem;">Bachelor of Computer Science</h3>
+      <p style="color:var(--text-light); margin-bottom:1.8rem;">
+        Aditya Degree College, Amalapuram • 2023 – 2026 (expected)
+      </p>
+
+      <h3 style="margin-bottom:0.6rem;">Senior Secondary (Intermediate)</h3>
+      <p style="color:var(--text-light); margin-bottom:1.8rem;">
+        State Board • 2022 – 2023
+      </p>
+
+      <h3 style="margin-bottom:0.6rem;">Secondary (SSC)</h3>
+      <p style="color:var(--text-light);">
+        State Board • 2020
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface);">
+  <div class="container">
+    <h2 class="section-title">Timeline & Experience</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3 style="margin-bottom:0.4rem;">Short-term MERN Stack Internship</h3>
+        <p style="color:var(--text-light); font-size:0.98rem; margin-bottom:1rem;">
+          Adhoc Network • 2025
+        </p>
+        <ul style="padding-left:1.4rem; color:var(--text-light);">
+          <li>Worked on frontend-backend integration</li>
+          <li>Built and consumed REST APIs</li>
+          <li>Performed database operations (MongoDB)</li>
+          <li>Gained hands-on experience with full-stack development workflow</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3 style="margin-bottom:0.4rem;">B.Sc Computer Science</h3>
+        <p style="color:var(--text-light); font-size:0.98rem;">
+          Aditya Degree College • 2023 – Present
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievement-list">
+      <div class="card">
+        <h3 style="margin-bottom:0.8rem;">Winner – College Technical Quiz</h3>
+        <p style="color:var(--text-light);">Secured 1st place in inter-department technical quiz competition</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:0.8rem;">Winner – College-level Hackathon</h3>
+        <p style="color:var(--text-light);">Led team to victory in intra-college hackathon event</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Durgambika Korlapati</p>
+    <p style="margin-top:0.6rem; font-size:0.9rem;">Made with curiosity & persistence in India</p>
+  </div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  // Dark mode
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    body.classList.add('dark');
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
+    themeToggle.innerHTML = body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+  });
+
+  // Mobile menu
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

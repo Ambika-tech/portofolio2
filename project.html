@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Projects by Durgambika Korlapati - Portfolio website, Quiz application, MERN internship work"/>
+  <title>Durgambika Korlapati | Projects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --primary: #6366f1;
+      --accent: #a5b4fc;
+      --glow: #818cf8;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #1e2937;
+      --shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 9rem 0 6rem;
+      background: linear-gradient(135deg, #111827 0%, #312e81 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(99,102,241,0.22) 0%, transparent 70%);
+      animation: glowPulse 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { opacity: 0.55; }
+      100% { opacity: 0.95; }
+    }
+
+    .section-title {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 4rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Project Grid & Cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.35);
+    }
+
+    .project-card .image-placeholder {
+      height: 220px;
+      background: linear-gradient(135deg, #1e2937, #312e81);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 1.25rem;
+      font-weight: 500;
+      transition: all 0.4s;
+    }
+
+    .project-card:hover .image-placeholder {
+      background: linear-gradient(135deg, #312e81, #4338ca);
+      color: #cbd5e1;
+    }
+
+    .project-content {
+      padding: 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      font-size: 1.55rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.3rem 0 1.5rem;
+    }
+
+    .tech-badge {
+      background: #312e81;
+      color: #c7d2fe;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .project-card:hover .tech-badge {
+      background: #4338ca;
+      color: #e0e7ff;
+    }
+
+    .project-links {
+      margin-top: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .project-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--surface);
+      padding: 4rem 0 2.5rem;
+      text-align: center;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .hero { padding: 7rem 0 5rem; }
+      .section-title { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-content">
+    <div class="logo">Ambika Korlapati </div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="certification.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+      <a href="c:\Users\ambik\OneDrive\Documents\canvaresume.pdf" class="view-btn" download style="padding:0.75rem 1.5rem; font-size:0.95rem;">Download CV</a>
+    </div>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1>My Projects</h1>
+    <p style="font-size:1.3rem; color:var(--text-light); max-width:680px; margin:1.5rem auto 0;">
+      Focused projects that helped me grow as a developer and solve real problems.
+    </p>
+  </div>
+</div>
+
+<section style="padding: 7rem 0 10rem;">
+  <div class="container">
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="image-placeholder">Personal Portfolio</div>
+        <div class="project-content">
+          <h3>Personal Portfolio Website</h3>
+          <p style="color:var(--text-light); margin-bottom:1.2rem;">
+            Clean, responsive single-page portfolio built to showcase my skills, projects and journey as a computer science student.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href=" https://ambika-tech.github.io/Portofolio/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="image-placeholder">Interactive Quiz Platform</div>
+        <div class="project-content">
+          <h3>Dynamic Quiz Web Application</h3>
+          <p style="color:var(--text-light); margin-bottom:1.2rem;">
+            Full-featured quiz system with instant scoring, question bank and user-friendly interface — great foundation for e-learning features.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href=" https://ambika-tech.github.io/quiz/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

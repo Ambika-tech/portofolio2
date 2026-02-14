@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Durgambika Korlapati - Computer Science student open to internships"/>
+  <title>Ambika Korlapati | Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --primary: #6366f1;
+      --accent: #a5b4fc;
+      --glow: #818cf8;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #1e2937;
+      --shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 9rem 0 7rem;
+      background: linear-gradient(135deg, #111827, #312e81);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(99,102,241,0.22) 0%, transparent 70%);
+      animation: glowPulse 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { opacity: 0.6; }
+      100% { opacity: 0.95; }
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 980px;
+      margin: 4rem auto 0;
+    }
+
+    form {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1.1rem 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99,102,241,0.2);
+    }
+
+    textarea { min-height: 150px; resize: vertical; }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1.05rem;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      color: #0a0f1e;
+      box-shadow: 0 0 25px var(--glow);
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 3rem 0 2rem;
+      font-size: 2.8rem;
+    }
+
+    .social-icons a {
+      color: var(--text-light);
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+      transform: translateY(-6px) scale(1.15);
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+      color: var(--text-light);
+    }
+
+    .contact-detail i {
+      font-size: 1.6rem;
+      color: var(--primary);
+      width: 30px;
+    }
+
+    #form-message {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    #form-message.success { color: #34d399; display: block; }
+
+    footer {
+      background: var(--surface);
+      padding: 4rem 0 2.5rem;
+      text-align: center;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 820px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 7rem 0 5rem; }
+      .social-icons { font-size: 2.4rem; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-content">
+    <div class="logo">Ambika Korlapati</div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="certification.html">Certificates</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="c:\Users\ambik\OneDrive\Documents\canvaresume.pdf" class="btn-primary" download>Download CV</a>
+    </div>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1>Let's Connect</h1>
+    <p style="font-size:1.3rem; color:var(--text-light); max-width:620px; margin:1.5rem auto 0;">
+      Open to internships, collaborations, and tech conversations
+    </p>
+  </div>
+</div>
+
+<section style="padding: 8rem 0;">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Form -->
+      <div>
+        <h2 style="font-size:1.9rem; margin-bottom:1.8rem;">Send a Message</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Your message..." required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+        <div id="form-message"></div>
+      </div>
+
+      <!-- Contact Info + Social -->
+      <div class="contact-info">
+        <h2 style="font-size:1.9rem; margin-bottom:2rem;">Get In Touch</h2>
+
+        <div class="contact-detail">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+918179299356" style="color:var(--text-light); text-decoration:none;">
+            +91 81792 99356
+          </a>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:ambikakorlapati976@gmail.com" style="color:var(--text-light); text-decoration:none;">
+            ambikakorlapati976@gmail.com
+          </a>
+        </div>
+
+        <div style="margin-top:3rem;">
+          <h3 style="margin-bottom:1.5rem; color:var(--accent);">Social Media</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/your-linkedin-Ambika Korlapati" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/your-github-Ambika-tech" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </di
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Simple form feedback
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const msg = document.getElementById('form-message');
+    msg.textContent = "Thank you! I'll get back to you soon.";
+    msg.className = 'success';
+    msg.style.display = 'block';
+    this.reset();
+    setTimeout(() => msg.style.display = 'none', 5000);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical Skills of Durgambika Korlapati - Python, Java, C, HTML, CSS, JavaScript">
+  <title>Durgambika Korlapati | Skills</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --primary: #6366f1;
+      --accent: #a5b4fc;
+      --glow: #818cf8;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #1e2937;
+      --progress-bg: #1e2937;
+      --progress-fill: #6366f1;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar (consistent with other pages) */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1.25rem 0;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      margin: 0 1.25rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    /* Hero / Header */
+    .page-header {
+      padding: 9rem 0 6rem;
+      text-align: center;
+      background: linear-gradient(135deg, #111827 0%, #312e81 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(99,102,241,0.18) 0%, transparent 70%);
+      animation: subtlePulse 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtlePulse {
+      0% { opacity: 0.5; transform: scale(1); }
+      100% { opacity: 0.85; transform: scale(1.15); }
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 4.5rem;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Skill Cards */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 2.8rem 2rem;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(129,140,248,0.15);
+      transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.9s forwards;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 45px rgba(129,140,248,0.35);
+    }
+
+    .skill-icon {
+      font-size: 5rem;
+      margin-bottom: 1.4rem;
+      transition: all 0.5s ease;
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: scale(1.18) rotate(8deg);
+      filter: drop-shadow(0 0 25px currentColor);
+    }
+
+    .skill-name {
+      font-size: 1.45rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+    }
+
+    .skill-desc {
+      color: var(--text-light);
+      font-size: 0.98rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Proficiency Bar */
+    .proficiency {
+      margin-top: 1.2rem;
+      background: var(--progress-bg);
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: width 1.8s ease-out;
+      box-shadow: 0 0 20px var(--glow);
+    }
+
+    .progress-text {
+      position: absolute;
+      top: -28px;
+      right: 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Staggered animation */
+    .card-1 { animation-delay: 0.1s; }
+    .card-2 { animation-delay: 0.25s; }
+    .card-3 { animation-delay: 0.4s; }
+    .card-4 { animation-delay: 0.55s; }
+    .card-5 { animation-delay: 0.7s; }
+    .card-6 { animation-delay: 0.85s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .page-header { padding: 7rem 0 5rem; }
+      .section-title { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Paste your consistent <nav> here (copy from index.html) -->
+  <!-- Example: -->
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Ambika Korlapati.</div>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="certification.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+        <a href="c:\Users\ambik\OneDrive\Documents\canvaresume.pdf" class="btn" download>Download CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="section-title"> My Technical Skills</h1>
+    </div>
+  </header>
+
+  <section style="padding: 6rem 0 10rem;">
+    <div class="container">
+      <div class="skill-grid">
+
+        <!-- Python -->
+        <div class="skill-card card-1">
+          <i class="fab fa-python skill-icon" style="color: #3776ab;"></i>
+          <div class="skill-name">Python</div>
+          <div class="skill-desc">Data analysis, scripting, automation</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="90"></div>
+            <div class="progress-text">90%</div>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="skill-card card-2">
+          <i class="fa-brands fa-java skill-icon" style="color: #f89820;"></i>
+          <div class="skill-name">Java</div>
+          <div class="skill-desc">OOP, application logic, backend basics</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="80"></div>
+            <div class="progress-text">80%</div>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div class="skill-card card-3">
+          <i class="fas fa-code skill-icon" style="color: #a8b9cc;"></i>
+          <div class="skill-name">C</div>
+          <div class="skill-desc">Systems programming, algorithms, memory management</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="85"></div>
+            <div class="progress-text">85%</div>
+          </div>
+        </div>
+
+        <!-- HTML -->
+        <div class="skill-card card-4">
+          <i class="fab fa-html5 skill-icon" style="color: #e34f26;"></i>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-desc">Semantic markup, accessibility, structure</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="95"></div>
+            <div class="progress-text">95%</div>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-card card-5">
+          <i class="fab fa-css3-alt skill-icon" style="color: #1572b6;"></i>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-desc">Responsive design, animations, Flexbox/Grid</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="90"></div>
+            <div class="progress-text">90%</div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card card-6">
+          <i class="fab fa-js skill-icon" style="color: #f7df1e;"></i>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-desc">DOM manipulation, ES6+, interactivity</div>
+          <div class="proficiency">
+            <div class="progress-fill" data-width="85"></div>
+            <div class="progress-text">85%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animate progress bars when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.progress-fill').forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width + '%';
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>

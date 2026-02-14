@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certifications of Durgambika Korlapati - NPTEL Cloud Computing, Cisco Python, MongoDB and more">
+  <title>Durgambika Korlapati | Certificates</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --primary: #6366f1;
+      --accent: #a5b4fc;
+      --glow: #818cf8;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #1e2937;
+      --shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.22s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 9rem 0 7rem;
+      background: linear-gradient(135deg, #111827, #312e81);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 40% 30%, rgba(99,102,241,0.25) 0%, transparent 70%);
+      animation: glowPulse 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      color: var(--accent);
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s backwards;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.4);
+    }
+
+    .cert-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .cert-card:hover .cert-icon {
+      transform: scale(1.15) rotate(8deg);
+      filter: drop-shadow(0 0 20px currentColor);
+    }
+
+    .cert-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+    }
+
+    .cert-issuer {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .cert-date {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .view-btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-block;
+      margin-top: 1.2rem;
+    }
+
+    .view-btn:hover {
+      background: #818cf8;
+      transform: scale(1.06);
+      box-shadow: 0 0 25px var(--glow);
+    }
+
+    footer {
+      background: var(--surface);
+      padding: 3.5rem 0;
+      text-align: center;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 1.5rem;
+      }
+      .nav-links.open { display: flex; }
+      .hero { padding: 7rem 0 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-content">
+    <div class="logo">Ambika Korlapati.</div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="certification.html" class="active">Certificates</a>
+      <a href="contact.html">Contact</a>
+      <a href="c:\Users\ambik\OneDrive\Documents\canvaresume.pdf" class="view-btn" download style="padding:0.7rem 1.4rem; font-size:0.95rem;">Download CV</a>
+    </div>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1> My Certifications</h1>
+    <p style="font-size:1.3rem; color:var(--text-light); max-width:620px; margin:1.5rem auto 0;">
+      Verified credentials that demonstrate my commitment to continuous learning
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="cert-grid">
+
+      <!-- 1. Cloud Computing - NPTEL -->
+      <div class="cert-card stagger-1">
+        <i class="fas fa-cloud cert-icon" style="color:#0ea5e9;"></i>
+        <h3 class="cert-title">Cloud Computing</h3>
+        <div class="cert-issuer">NPTEL SWAYAM</div>
+        <div class="cert-date">2025</div>
+        <p style="color:var(--text-light); margin-bottom:1.5rem;">Comprehensive course covering cloud architectures, services and deployment models.</p>
+        <a href="Nptel .png" target="_blank" class="view-btn">View Certificate</a>
+      </div>
+
+      <!-- 2. MePro English Proficiency - Pearson -->
+      <div class="cert-card stagger-2">
+        <i class="fas fa-language cert-icon" style="color:#eab308;"></i>
+        <h3 class="cert-title">MePro English Proficiency</h3>
+        <div class="cert-issuer">Pearson</div>
+        <div class="cert-date">Completed</div>
+        <p style="color:var(--text-light); margin-bottom:1.5rem;">Professional English communication and workplace skills certification.</p>
+        <a href="mepro.jpeg" target="_blank" class="view-btn">View Certificate</a>
+      </div>
+
+      <!-- 3. Python Essentials 1 & 2 - Cisco -->
+      <div class="cert-card stagger-3">
+        <i class="fab fa-python cert-icon" style="color:#3776ab;"></i>
+        <h3 class="cert-title">Python Essentials 1 & 2</h3>
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-date">Completed</div>
+        <p style="color:var(--text-light); margin-bottom:1.5rem;">Foundational and intermediate Python programming, data structures and scripting.</p>
+        <a href="PYE1.jpeg" target="_blank" class="view-btn">View Certificate</a>
+      </div>
+
+      <!-- 4. C Programming Certification - Criativo -->
+      <div class="cert-card stagger-4">
+        <i class="fas fa-terminal cert-icon" style="color:#e11d48;"></i>
+        <h3 class="cert-title">C Programming Certification</h3>
+        <div class="cert-issuer">Criativo</div>
+        <div class="cert-date">Completed</div>
+        <p style="color:var(--text-light); margin-bottom:1.5rem;">Core C language concepts, memory management and algorithmic problem solving.</p>
+        <a href="C.jpeg" target="_blank" class="view-btn">View Certificate</a>
+      </div>
+
+      <!-- 5. MongoDB Bootcamp - LetsUpgrade -->
+      <div class="cert-card stagger-5">
+        <i class="fas fa-database cert-icon" style="color:#10b981;"></i>
+        <h3 class="cert-title">MongoDB Bootcamp</h3>
+        <div class="cert-issuer">LetsUpgrade</div>
+        <div class="cert-date">Completed</div>
+        <p style="color:var(--text-light); margin-bottom:1.5rem;">NoSQL database design, CRUD operations, aggregation and real-world application development.</p>
+        <a href="YOUR_LETSUPGRADE_MONGODB_CERTIFICATE_IMAGE_URL_HERE" target="_blank" class="view-btn">View Certificate</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ambika Korlapati</p>
+    <p style="margin-top:0.6rem; font-size:0.9rem;">Made with curiosity & persistence in India</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

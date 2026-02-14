@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durgambika Korlapati | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bg: #0a0f1e;
+  --surface: #111827;
+  --primary: #6366f1;
+  --accent: #a5b4fc;
+  --glow: #818cf8;
+  --text: #f1f5f9;
+  --text-light: #94a3b8;
+  --border: #1e2937;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin:0; }
+h1,h2 { font-family: 'Playfair Display', serif; }
+.container { max-width:1100px; margin:0 auto; padding:0 1.5rem; }
+nav { position:sticky; top:0; background:var(--surface); border-bottom:1px solid var(--border); z-index:100; padding:1.25rem 0; }
+.nav-links a { color:var(--text-light); margin:0 1.25rem; text-decoration:none; font-weight:500; }
+.nav-links a:hover { color:var(--accent); }
+.hero { padding:11rem 0 9rem; background:linear-gradient(135deg, #111827, #312e81); position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 30%, rgba(99,102,241,0.25) 0%, transparent 70%); animation:glowPulse 15s ease-in-out infinite alternate; }
+@keyframes glowPulse { 0% { opacity:0.6; } 100% { opacity:1; } }
+.profile-img { width:340px; height:340px; border-radius:50%; border:10px solid var(--surface); box-shadow:0 0 60px var(--glow); }
+.btn { background:var(--primary); color:white; padding:1rem 2.2rem; border-radius:999px; font-weight:600; text-decoration:none; display:inline-block; transition:all 0.4s; }
+.btn:hover { background:var(--accent); color:#111827; box-shadow:0 0 30px var(--glow); transform:scale(1.08); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-size:1.9rem;font-weight:700;color:var(--primary);">Ambika Korlapati</div>
+    <div class="nav-links">
+      <a href="home.html" style="color:var(--accent);">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="certification.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+      <a href="project.html">Projects</a>
+
+
+      <a href="c:\Users\ambik\OneDrive\Documents\canvaresume.pdf" class="btn" download>Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+    <div>
+      <h1 style="font-size:4.2rem;line-height:1.1;">Ambika Korlapati</h1>
+      <p style="font-size:1.65rem;color:var(--text-light);margin:1.8rem 0 2.5rem;"> A Dedicated Computer Science || FullStack Web devoleper.</p>
+      
+    </div>
+    <div style="text-align:center;">
+      <img src="image.jpeg" alt="Ambika" class="profile-img" width="50%" height="50%">
+    </div>
+  </div>
+</section>
+</body>
+</html>
